@@ -5,7 +5,7 @@ import { StyleSheetManager } from "styled-components";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <StyleSheetManager disableCSSOMInjection={false}>
-      <Component {...pageProps} />123
+      <Component {...pageProps} />
     </StyleSheetManager>
   );
 }
