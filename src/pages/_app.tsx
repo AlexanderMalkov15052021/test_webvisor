@@ -5,10 +5,10 @@ import { StyleSheetManager } from "styled-components";
 
 export default function App({ Component, pageProps }: AppProps) {
 
-  const [state, setState] = useState(false);
+  const [state, setState] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setState(true), 5000);
+    setTimeout(() => setState(false), 10000);
   }, [])
 
   return (
