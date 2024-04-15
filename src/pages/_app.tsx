@@ -5,15 +5,7 @@ import { StyleSheetManager } from "styled-components";
 
 export default function App({ Component, pageProps }: AppProps) {
 
-  const [state, setState] = useState<boolean>();
-
-  useEffect(() => {
-    setTimeout(() => setState(true), 8000);
-  }, [])
-
   return (
-    <StyleSheetManager disableCSSOMInjection={state}>
-      <Component {...pageProps} />
-    </StyleSheetManager>
+    <Component {...pageProps} />
   );
 }
