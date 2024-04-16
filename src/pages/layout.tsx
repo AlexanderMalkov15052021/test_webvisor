@@ -1,13 +1,13 @@
-import StyledComponentsRegistry from "./registry"
+// import StyledComponentsRegistry from "./registry"
 
 
-export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode
-}) {
-    console.log("RootLayout");
-    return (
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-    )
-}
+// export default function RootLayout({
+//     children,
+// }: {
+//     children: React.ReactNode
+// }) {
+//     console.log("RootLayout");
+//     return (
+//         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+//     )
+// }
