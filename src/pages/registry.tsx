@@ -17,7 +17,7 @@ export default function StyledComponentsRegistry({
     return <>{styles}</>
   })
 
-  if (typeof window !== 'undefined') return <StyleSheetManager disableCSSOMInjection>{children}</StyleSheetManager>
+  if (typeof window !== 'undefined') return <>{children}</>
 
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
