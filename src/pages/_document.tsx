@@ -37,10 +37,11 @@ class MyDocument<P> extends Document<P & BaseWebvisorStyle> {
 
   render() {
     const { webvisorStyle } = this.props;
+    const stylesString = webvisorStyle.replace(/\n/g, '');
+
     return (
       <Html lang="en">
         <Head>
-          <style rel="preload">{webvisorStyle}</style>
           {/* <!-- Yandex Metrika  --> */}
           <script
             async
@@ -59,6 +60,14 @@ class MyDocument<P> extends Document<P & BaseWebvisorStyle> {
                   webvisor:true
               });
             `
+            }}
+          />
+          <script
+            defer
+            dangerouslySetInnerHTML={{
+              __html: `
+              document.head.insertAdjacentHTML('beforeEnd', '<style>${stylesString}</style>')
+              `
             }}
           />
         </Head>
