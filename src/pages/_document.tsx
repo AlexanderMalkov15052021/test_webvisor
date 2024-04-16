@@ -1,7 +1,11 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
-class MyDocument extends Document {
+type BaseWebvisorStyle = {
+  webvisorStyle: string;
+}
+
+class MyDocument<P> extends Document<P & BaseWebvisorStyle> {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
@@ -23,7 +27,8 @@ class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        )
+        ),
+        webvisorStyle: sheet.getStyleElement()[0].props.dangerouslySetInnerHTML.__html
       };
     } finally {
       sheet.seal();
@@ -31,11 +36,11 @@ class MyDocument extends Document {
   }
 
   render() {
-    const { styles } = this.props;
+    const { webvisorStyle } = this.props;
     return (
       <Html lang="en">
         <Head>
-          <style rel="preload">{styles}</style>
+          <style rel="preload">{webvisorStyle}</style>
           {/* <!-- Yandex Metrika  --> */}
           <script
             async
