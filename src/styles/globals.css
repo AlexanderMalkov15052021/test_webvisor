@@ -93,21 +93,3 @@ a {
     color-scheme: dark;
   }
 }
-
-.cFvoa {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: blueviolet;
-  border-radius: 8px;
-  text-align: center;
-}
-
-/*!sc*/
-data-styled.g1[id="sc-2ab8a947-0"] {
-  content: "cFvoa,"
-}
-
-/*!sc*/

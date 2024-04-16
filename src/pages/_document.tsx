@@ -14,7 +14,7 @@ class MyDocument extends Document {
 
       const initialProps = await Document.getInitialProps(ctx);
 
-      console.log(sheet.getStyleElement()[0].props.dangerouslySetInnerHTML.__html);
+      // console.log(sheet.getStyleElement()[0].props.dangerouslySetInnerHTML.__html);
 
       return {
         ...initialProps,
@@ -29,11 +29,13 @@ class MyDocument extends Document {
       sheet.seal();
     }
   }
+
   render() {
+    const { styles } = this.props;
     return (
       <Html lang="en">
         <Head>
-          <link rel="stylesheet" href="/styles/index.css" />
+          <style rel="preload">{styles}</style>
           {/* <!-- Yandex Metrika  --> */}
           <script
             async
