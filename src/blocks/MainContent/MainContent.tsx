@@ -2,7 +2,7 @@ import { Container } from './MainContent.styled';
 
 export const MainContent = () => {
 
-    console.log("Test webvisor 10");
+    console.log("Test webvisor 11");
     
-    return <Container>Test webvisor 10</Container>
+    return <Container>Test webvisor 11</Container>
 }
