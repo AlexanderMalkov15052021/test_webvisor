@@ -18,8 +18,6 @@ class MyDocument<P> extends Document<P & BaseWebvisorStyle> {
 
       const initialProps = await Document.getInitialProps(ctx);
 
-      // console.log(sheet.getStyleElement()[0].props.dangerouslySetInnerHTML.__html);
-
       return {
         ...initialProps,
         styles: (
