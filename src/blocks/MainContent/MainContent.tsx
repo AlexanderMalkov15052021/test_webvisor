@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Container, DescriptionBlock, NavButton } from './MainContent.styled';
+import { MainMenu } from '../MainMenu/MainMenu';
 
 export const MainContent = () => {
 
@@ -14,6 +15,7 @@ export const MainContent = () => {
                 <NavButton><Link href={'/about'}>About page</Link></NavButton>
             </div>
             <DescriptionBlock>Главная!!!</DescriptionBlock>
+            <MainMenu />
         </Container>
     );
 }
