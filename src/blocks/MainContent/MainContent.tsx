@@ -3,11 +3,11 @@ import { Container, DescriptionBlock, NavButton } from './MainContent.styled';
 
 export const MainContent = () => {
 
-    console.log("Test webvisor 20");
+    console.log("Test webvisor 22");
 
     return (
         <Container>
-            <h1>Test webvisor 20</h1>
+            <h1>Test webvisor 22</h1>
             <h2>Main page</h2>
             <div>
                 <NavButton><Link href={'/'}>Main page</Link></NavButton>

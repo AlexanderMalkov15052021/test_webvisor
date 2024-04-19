@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -14,7 +15,12 @@ export const NavButton = styled.button`
     background-color: lightsalmon;
     border-radius: 8px;
     margin: 30px;
-    padding: 10px;
+    & {
+        a {
+            display: block;
+            padding: 10px;
+        }
+    }
 `;
 
 export const DescriptionBlock = styled.div`

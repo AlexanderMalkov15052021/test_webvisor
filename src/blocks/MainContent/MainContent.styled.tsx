@@ -14,7 +14,12 @@ export const NavButton = styled.button`
     background-color: blueviolet;
     border-radius: 8px;
     margin: 30px;
-    padding: 10px;
+    & {
+        a {
+            display: block;
+            padding: 10px;
+        }
+    }
 `;
 
 export const DescriptionBlock = styled.div`
