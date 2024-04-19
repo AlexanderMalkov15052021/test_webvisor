@@ -1,12 +1,13 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-// import RootLayout from "./layout";
+import { StyleSheetManager as DisableCSSOMInjection, StyleSheetManager } from "styled-components";
 
 export default function App({ Component, pageProps }: AppProps) {
-  console.log("Cange page!!!");
   return (
-    // <RootLayout>
-      <Component {...pageProps} />
-    // </RootLayout>
+    <DisableCSSOMInjection disableCSSOMInjection>
+      <StyleSheetManager disableCSSOMInjection={false}>
+        <Component {...pageProps} />
+      </StyleSheetManager>
+    </DisableCSSOMInjection>
   );
 }

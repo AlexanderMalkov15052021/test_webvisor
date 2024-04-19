@@ -5,12 +5,13 @@ export const MainMenu = () => {
 
     const [menuState, setMenuState] = useState(false);
 
-    console.log("Test webvisor 22");
+    const menuClickHandler = () => {
+        setMenuState(state => !state);
+    }
 
     return (
         <div>
-            <ButtonMenu onClick={() => setMenuState(state => !state)}>Show menu</ButtonMenu>
-
+            <ButtonMenu onClick={menuClickHandler}>Show menu</ButtonMenu>
             {
                 menuState && <DropdownMenu>
                     <ul>
