@@ -13,7 +13,7 @@ export const DropdownMenu = styled.div`
 `;
 
 export const ButtonMenu = styled.button`
-    width: 10vw;
+    width: 100px;
     background-color: violet;
     border-radius: 8px;
     margin: 10px;
