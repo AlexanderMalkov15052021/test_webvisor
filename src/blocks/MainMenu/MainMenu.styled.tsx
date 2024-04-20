@@ -17,4 +17,5 @@ export const ButtonMenu = styled.button`
     background-color: violet;
     border-radius: 8px;
     margin: 10px;
+    padding: 10px;
 `;
