@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const DropdownMenu = styled.div`
-    width: 20vw;
     background-color: burlywood;
     border-radius: 8px;
     margin: 10px;

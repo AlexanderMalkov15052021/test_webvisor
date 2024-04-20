@@ -25,6 +25,8 @@ export const NavButton = styled.button`
 export const DescriptionBlock = styled.div`
     width: 50vw;
     height: 10vw;
+    min-width: 250px;
+    min-height: 50px;
     background-color: lightblue;
     border-radius: 8px;
     margin: 30px;
