@@ -1,11 +1,7 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
-type BaseWebvisorStyle = {
-  webvisorStyle: string;
-}
-
-class MyDocument<P> extends Document<P & BaseWebvisorStyle> {
+class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
@@ -25,8 +21,7 @@ class MyDocument<P> extends Document<P & BaseWebvisorStyle> {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        ),
-        webvisorStyle: sheet.getStyleElement()[0].props.dangerouslySetInnerHTML.__html
+        )
       };
     } finally {
       sheet.seal();
@@ -34,9 +29,6 @@ class MyDocument<P> extends Document<P & BaseWebvisorStyle> {
   }
 
   render() {
-    const { webvisorStyle } = this.props;
-    const stylesString = webvisorStyle.replace(/\n/g, '');
-
     return (
       <Html lang="en">
         <Head>
@@ -58,14 +50,6 @@ class MyDocument<P> extends Document<P & BaseWebvisorStyle> {
                   webvisor:true
               });
             `
-            }}
-          />
-          <script
-            defer
-            dangerouslySetInnerHTML={{
-              __html: `
-              document.head.insertAdjacentHTML('beforeEnd', '<style>${stylesString}</style>')
-              `
             }}
           />
         </Head>
