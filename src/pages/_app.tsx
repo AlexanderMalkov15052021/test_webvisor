@@ -1,25 +1,18 @@
+import { getWebvisorStylesStr } from "@/helpers/getWebvisorStylesStr";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 
-import { createGlobalStyle } from 'styled-components'
-
-import { DropdownMenu } from '../blocks/MainMenu/MainMenu.styled';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  .${DropdownMenu.styledComponentId} {
-    ${DropdownMenu.componentStyle.rules}
-  }
-`
+  ${getWebvisorStylesStr()}
+`;
 
 export default function App({ Component, pageProps }: AppProps) {
-  console.log(DropdownMenu);
   return (
     <>
-
       <GlobalStyle />
-
       <Component {...pageProps} />
-
     </>
   );
 }

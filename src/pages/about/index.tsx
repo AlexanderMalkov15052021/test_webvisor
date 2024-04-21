@@ -5,12 +5,10 @@ import styles from "@/styles/Home.module.css";
 
 export default function About() {
 
-  console.log("Test webvisor 21");
-
   return (
     <main className={`${styles.main}`}>
       <Container>
-        <h1>Test webvisor 21</h1>
+        <h1>Test webvisor 26</h1>
         <h2>About page</h2>
         <div>
           <NavButton><Link href={'/'}>Main page</Link></NavButton>
