@@ -33,7 +33,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* <!-- Yandex Metrika  --> */}
-          <script
+          {/* <script
             async
             dangerouslySetInnerHTML={{
               __html: `
@@ -51,7 +51,7 @@ class MyDocument extends Document {
               });
             `
             }}
-          />
+          /> */}
         </Head>
         <body>
           <Main />
