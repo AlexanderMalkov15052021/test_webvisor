@@ -24,22 +24,32 @@ export default function App({ Component, pageProps }: AppProps) {
       })
       .catch(err => alert(`Ошибка добавления стилей: ${err}`));
 
+    const webvisorStyle = document.createElement("style");
+
+    webvisorStyle.id = 'webvisorStyle';
+
+    webvisorStyle.setAttribute('type', 'text');
+
+    document && document.head.appendChild(webvisorStyle);
+
     const observer = new MutationObserver(() => {
 
       new Promise((resolve: (value: string) => void) => {
 
-        const stylesString = Object.values(document.styleSheets[2].cssRules)
-          .map(obj => obj.cssText).flat().join('');
+        const stylesString = Object.values(document.styleSheets)
+          .map(object => Object.values(object.cssRules)
+            .map(obj => obj.cssText)).flat().join('');
 
         resolve(stylesString);
       })
         .then(result => {
           const webvisorStyle = document.getElementById('webvisorStyle');
 
-          if (webvisorStyle?.innerHTML !== result)
-            webvisorStyle
-              ? (webvisorStyle.innerHTML = result)
-              : document.head.insertAdjacentHTML('beforeend', `<style id='webvisorStyle'>${result}</style>`);
+          if (webvisorStyle) {
+
+            webvisorStyle.innerHTML !== result && (webvisorStyle.innerHTML = result);
+
+          }
 
         })
         .catch(err => alert(`Ошибка добавления стилей: ${err}`));

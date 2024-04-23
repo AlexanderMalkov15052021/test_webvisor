@@ -7,6 +7,8 @@ export const MainMenu = () => {
 
     const menuClickHandler = () => {
         setMenuState(state => !state);
+
+        // console.log(window?.asd);
     }
 
     return (
