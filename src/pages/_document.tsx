@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
-// 97114841 - new; 97016565;  97115111 - new account
+// 97114841 - new; 97016565;  97115111 - new account   https://mc.yandex.ru/metrika/tag.js
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -34,13 +34,6 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <style
-            dangerouslySetInnerHTML={{
-              __html: `
-                html body {color: violet}
-              `
-            }}
-          />
           {/* <!-- Yandex Metrika  --> */}
           <script
             async

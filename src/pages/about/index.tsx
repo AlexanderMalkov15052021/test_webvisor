@@ -8,7 +8,7 @@ export default function About() {
   return (
     <main className={`${styles.main}`}>
       <Container>
-        <h1>Test webvisor 33</h1>
+        <h1>Test webvisor 38</h1>
         <h2>About page</h2>
         <div>
           <NavButton><Link href={'/'}>Main page</Link></NavButton>
