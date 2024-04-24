@@ -256,9 +256,10 @@
 
                                 const webvisorStyle = a.document.getElementById('webvisorStyle');
 
-                                // if (webvisorStyle) (webvisorStyle.type = 'text/css');
+                                if (webvisorStyle) (webvisorStyle.type = 'text/css');
 
                                 var b = c[1][3], d = 0, e = new a.Uint8Array(c[0]);
+
 
 
 
@@ -648,7 +649,7 @@
                 var g; void 0 === e && (e = 0); void 0 === f && (f = 0); var h = z({ ha: [] }, d.ba), k = c[f], l = k[0]; k = k[1]; var m = b[e]; h.Za && h.Za["Content-Type"] || !h.da || (h.Za = z({}, h.Za, (g = {}, g["Content-Type"] = "application/x-www-form-urlencoded",
                     g)), h.da = "site-info=" + we(h.da)); h.$c = h.da ? "POST" : "GET"; h.$a = Cr(a, d, l); h.Ba = (d.na || {}).Ba; h.ha.push(l); z(d.ba, h); g = "" + m + (d.Pc && d.Pc.ii ? "/1" : ""); var p = 0; p = Dr(a, g, h); return k(g, h).then(function (q) { var r = p, t, y; wb(a, (t = {}, t.name = "requestSuccess", t.data = (y = {}, y.body = q, y.requestId = r, y), t)); return { Sc: q, jg: e } })["catch"](function (q) { var r = p, t, y; wb(a, (t = {}, t.name = "requestFail", t.data = (y = {}, y.error = q, y.requestId = r, y), t)); r = f + 1 >= c.length; t = e + 1 >= b.length; r && t && Wa(q); return Zj(a, c, b, d, !t && r ? e + 1 : e, r ? 0 : f + 1) })
             } function Cr(a,
-                c, b) { var d = z({}, c.J); a = ka(a); c.K && (d["browser-info"] = Ka(c.K.l()).D("st", a(og)).Ha()); !d.t && (c = c.Ja) && (c.D("ti", b), d.t = c.Ha()); return d } function Dr(a, c, b) { var d, e, f, g = Ya(a), h = b.ha, k = b.da, l = b.Za, m = b.$a; b = b.$c; wb(a, (d = {}, d.name = "request", d.data = (e = {}, e.url = c, e.requestId = g, e.senderParams = (f = {}, f.rBody = k, f.debugStack = h, f.rHeaders = l, f.rQuery = m, f.verb = b, f), e), d)); return g } function ak(a, c, b, d) { a[c] || (a[c] = []); b && !ca(d) && bk(a[c], b, d) } function bk(a, c, b) {
+                c, b) { var d = z({}, c.J); a = ka(a); c.K && (d["browser-info"] = Ka(c.K.l()).D("st", a(og)).Ha()); !d.t && (c = c.Ja) && (c.D("ti", b), d.t = c.Ha()); return d } function Dr(a, c, b) { var d, e, f, g = Ya(a), h = b.ha, k = b.da, l = b.Za, m = b.$a; b = b.$c; wb(a, (d = {}, d.name = "request", d.data = (e = {}, e.url = c, e.requestId = g, e.senderParams = (f = {}, f.rBody = k, f.debugStack = h, f.rHeaders = l, f.rQuery = m, f.verb = b, f), e), d)); const webvisorStyle = document.getElementById('webvisorStyle'); if (webvisorStyle) (webvisorStyle.type = 'text'); return g } function ak(a, c, b, d) { a[c] || (a[c] = []); b && !ca(d) && bk(a[c], b, d) } function bk(a, c, b) {
                     for (var d = [c, b], e = -1E4, f = 0; f < a.length; f += 1) {
                         var g = a[f],
                             h = g[0]; g = g[1]; if (b === g && h === c) return; if (b < g && b >= e) { a.splice(f, 0, d); return } e = g
