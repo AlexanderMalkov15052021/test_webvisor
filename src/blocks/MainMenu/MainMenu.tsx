@@ -8,7 +8,7 @@ export const MainMenu = () => {
     const menuClickHandler = () => {
         setMenuState(state => !state);
 
-        console.log(window);
+        // console.log(window);
     }
 
     return (

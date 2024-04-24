@@ -11,7 +11,14 @@ export default function App({ Component, pageProps }: AppProps) {
       subtree: true
     };
 
-    const webvisorStyle = document.createElement("style");
+    interface webvisorStyle extends HTMLStyleElement {
+      currentCSSRules: string[];
+    }
+    
+
+    const styleContainer = document.querySelectorAll('[data-styled]')[0] as HTMLStyleElement;
+
+    const webvisorStyle = document.createElement("style") as webvisorStyle;
 
     webvisorStyle.id = 'webvisorStyle';
 
@@ -19,22 +26,33 @@ export default function App({ Component, pageProps }: AppProps) {
 
     document && document.head.appendChild(webvisorStyle);
 
+
     const observer = new MutationObserver(() => {
 
-      new Promise((resolve: (value: string) => void) => {
+      new Promise((resolve: (value: string[]) => void) => {
 
-        const stylesString = Object.values(document.styleSheets)
-          .map(object => Object.values(object.cssRules)
-            .map(obj => obj.cssText)).flat().join('');
+        const stylesString = Object.values(styleContainer.sheet!.cssRules).map(obj => obj.cssText);
 
         resolve(stylesString);
+
       })
         .then(result => {
-          const webvisorStyle = document.getElementById('webvisorStyle');
 
-          if (webvisorStyle) {
+          if (webvisorStyle.currentCSSRules?.length !== result.length) {
 
-            webvisorStyle.innerHTML !== result && (webvisorStyle.innerHTML = result);
+            webvisorStyle.currentCSSRules = result;
+
+            webvisorStyle.innerHTML = '';
+
+            const applyStyles = (styleRules: string[]) => {
+              styleRules.forEach(function (style, index) {
+                setTimeout(function () {
+                  webvisorStyle.innerHTML += style;
+                }, index)
+              })
+            }
+
+            applyStyles(webvisorStyle.currentCSSRules);
 
           }
 
