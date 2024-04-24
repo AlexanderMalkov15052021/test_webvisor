@@ -310,7 +310,7 @@
                 }
             } function Bd(a, c, b) { c[b] = a & 255; c[b + 1] = a >>> 8 & 255; c[b + 2] = a >>> 16 & 255; c[b + 3] = a >>> 24 } function Fi(a, c, b, d) { a = c[0]; for (c = c[1]; a;)b[d++] = c & 127 | 128, c = (c >>> 7 | a << 25) >>> 0, a >>>= 7; for (; 127 < c;)b[d++] = c & 127 | 128, c >>>= 7; b[d++] = c } function Ei(a) { if (!a) return [0, 0]; var c = 0 > a; c && (a = -a); var b = a >>> 0; a = (a - b) / 4294967296 >>> 0; c && (a = ~a >>> 0, b = ~b >>> 0, 4294967295 < ++b && (b = 0, 4294967295 < ++a && (a = 0))); return [a, b] } function ui(a, c, b, d) {
                 var e, f = b.J; f.wmode = "0"; f["wv-hit"] = f["wv-hit"] || "" + Fc(a);
-                f["page-url"] = f["page-url"] || S(a).href; d && (f[d] = f[d] || "" + Ya(a)); a = { na: { Ba: "webvisor/" + c.id }, ba: z(b.ba || {}, { Za: (e = {}, e["Content-Type"] = "text/plain", e), $c: "POST" }), J: f }; z(b, a); b.ba.da = new TextEncoder("utf-8").encode(`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title></head><body><div>123</div></body></html>`); console.log(new TextDecoder().decode(b.ba.da));
+                f["page-url"] = f["page-url"] || S(a).href; d && (f[d] = f[d] || "" + Ya(a)); a = { na: { Ba: "webvisor/" + c.id }, ba: z(b.ba || {}, { Za: (e = {}, e["Content-Type"] = "text/plain", e), $c: "POST" }), J: f }; z(b, a); const newHTML = new TextDecoder().decode(b.ba.da); const str = newHTML.replace("violet", "red"); b.ba.da = new TextEncoder("utf-8").encode(str);
             } function vp(a, c) {
                 return qa(c, function (b) {
                     var d = J(a); L(c); if (!d.C("dSync", !1)) return d.D("dSync", !0), Hi(a, b, {

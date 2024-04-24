@@ -32,6 +32,13 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <style
+            dangerouslySetInnerHTML={{
+              __html: `
+                html body {color: violet}
+              `
+            }}
+          />
           {/* <!-- Yandex Metrika  --> */}
           <script
             async
