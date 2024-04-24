@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
     webvisorStyle.id = 'webvisorStyle';
 
-    webvisorStyle.setAttribute('type', 'text');
+    webvisorStyle.setAttribute('scoped', 'scoped');
 
     document && document.head.appendChild(webvisorStyle);
 
