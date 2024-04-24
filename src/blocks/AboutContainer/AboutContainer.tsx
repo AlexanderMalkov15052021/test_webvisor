@@ -5,7 +5,7 @@ export const MainContent = () => {
 
     return (
         <Container>
-            <h1>Test webvisor 31</h1>
+            <h1>Test webvisor 32</h1>
             <h2>Main page</h2>
             <div>
                 <NavButton><Link href={'/'}>Main page</Link></NavButton>

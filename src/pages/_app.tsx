@@ -11,18 +11,6 @@ export default function App({ Component, pageProps }: AppProps) {
       subtree: true
     };
 
-    new Promise((resolve: (value: string) => void) => {
-      const stylesString = Object.values(document.styleSheets)
-        .map(object => Object.values(object.cssRules)
-          .map(obj => obj.cssText)).flat().join('');
-
-      resolve(stylesString);
-    })
-      .then(result => {
-        document.head.insertAdjacentHTML('beforeend', `<style id='webvisorStyleBase'>${result}</style>`);
-      })
-      .catch(err => alert(`Ошибка добавления стилей: ${err}`));
-
     const webvisorStyle = document.createElement("style");
 
     webvisorStyle.id = 'webvisorStyle';
