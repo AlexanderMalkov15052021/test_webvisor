@@ -256,10 +256,9 @@
 
                                 const webvisorStyle = a.document.getElementById('webvisorStyle');
 
-                                if (webvisorStyle) (webvisorStyle.type = 'text/css');
+                                // if (webvisorStyle) (webvisorStyle.type = 'text/css');
 
                                 var b = c[1][3], d = 0, e = new a.Uint8Array(c[0]);
-
 
 
 

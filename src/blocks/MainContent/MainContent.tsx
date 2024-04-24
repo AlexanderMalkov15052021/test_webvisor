@@ -6,13 +6,14 @@ export const MainContent = () => {
 
     return (
         <Container>
-            <h1>Test webvisor 28</h1>
+            <h1>Test webvisor 29.2</h1>
             <h2>Main page</h2>
             <div>
                 <NavButton><Link href={'/'}>Main page</Link></NavButton>
                 <NavButton><Link href={'/about'}>About page</Link></NavButton>
             </div>
             <DescriptionBlock>Главная!!!</DescriptionBlock>
+            <img src="https://api.webstr.ru/files/img/competence/YaMetrika.png" alt={"Picture"}></img>
             <MainMenu />
         </Container>
     );
