@@ -1,6 +1,8 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
+// 97114841 - new; 97016565;
+
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
@@ -50,7 +52,7 @@ class MyDocument extends Document {
               k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
               (window, document, "script", "./tag.js", "ym");
           
-              ym(97016565, "init", {
+              ym(97114841, "init", {
                   clickmap:true,
                   trackLinks:true,
                   accurateTrackBounce:true,
